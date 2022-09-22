@@ -13,11 +13,7 @@ int main() {
     ordenar(vector, longitud);
     printf("Parcialmente ordenado\n");
     imprimirVector(vector);
-
-    printf("procedo a imprimir el vector ordenado:por pasos\n");
-
     copio(vector, longitud);
-
 
 printf("imprimo el vector ordenado\n");
     imprimirVector(vector);
