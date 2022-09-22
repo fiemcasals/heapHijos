@@ -4,30 +4,31 @@
 
 void downheap(int i,int longitud, int * vector) {
 
-    if(HI(i)<longitud){
-        if(vector[i]>vector[HI(i)]){
-            if(HD(i)<longitud && vector[HI(i)]>vector[HD(i)]){
-                int pivote=vector[HD(i)];
-                vector[HD(i)]=vector[i];
-                vector[i]=pivote;
-                downheap(HD(i), longitud, vector);
-            }else{
-                int pivote=vector[HI(i)];
-                vector[HI(i)]=vector[i];
-                vector[i]=pivote;
-                downheap(HI(i), longitud, vector);
-            }
-
-        }else if(HD(i)<longitud && vector[i]>vector[HD(i)]){
-            int pivote=vector[HD(i)];
-            vector[HD(i)]=vector[i];
-            vector[i]=pivote;
-            downheap(HD(i), longitud, vector);
-
-        }
-    }
-
-}
+    while(i!=-10) {
+        if (HI(i) < longitud) {
+            if (vector[i] > vector[HI(i)]) {
+                if (HD(i) < longitud && vector[HI(i)] > vector[HD(i)]) {
+                    int pivote = vector[HD(i)];
+                    vector[HD(i)] = vector[i];
+                    vector[i] = pivote;
+                    //downheap(HD(i), longitud, vector);
+                    i=HD(i);
+                } else {
+                    int pivote = vector[HI(i)];
+                    vector[HI(i)] = vector[i];
+                    vector[i] = pivote;
+                    //downheap(HI(i), longitud, vector);
+                    i=HI(i);
+                }
+            } else if (HD(i) < longitud && vector[i] > vector[HD(i)]) {
+                int pivote = vector[HD(i)];
+                vector[HD(i)] = vector[i];
+                vector[i] = pivote;
+                //downheap(HD(i), longitud, vector);
+                i=HD(i);
+            }else{i=-10;}
+        }else{i=-10;}
+    }}
 
 int longVector(int * vector){
         int cont=0;
